@@ -261,13 +261,11 @@ async function ativarMetaLux() {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          
-          "HTTP-Referer": "https://infodose.com.br",
-          "X-Title": "MetaLux",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model: modelos[i],
+            "Authorization": "Bearer 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",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            model: "qwen/qwen2.5-vl-3b-instruct:free",
           max_tokens: 300,
           temperature: 0.8,
           messages: [
